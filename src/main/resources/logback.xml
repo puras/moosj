@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 典型的日志pattern -->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{10} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="ALL">
+        <appender-ref ref="console" />
+    </root>
+    <logger name="org.apache.ibatis" level="DEBUG" />
+
+    <!-- spring modules -->
+    <logger name="org.springframework" level="WARN" />
+    <logger name="org.springframework.transaction" level="WARN" />
+    <logger name="org.springframework.security" level="WARN" /> <!-- to debug security related issues (DEBUG) -->
+    <logger name="org.springframework.web.servlet.mvc" level="WARN" /> <!-- some serialization issues are at trace level here: org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod -->
+
+</configuration>
